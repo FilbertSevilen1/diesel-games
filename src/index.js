@@ -1,17 +1,59 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import { createStore} from 'redux'
+import { Provider } from 'react-redux'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// import main component
+import App from './App'
+import { ChakraProvider } from '@chakra-ui/react'
+import { Axios } from 'axios'
+
+const INITIAL_STATE = {
+    user : {
+      username : "",
+      email : "",
+      fullname : "",
+      rank : "",
+      role : "",
+      profilepicture: ""
+    },
+    loading : false
+  }
+  function Reducer(state = INITIAL_STATE, action){
+    
+    if(action.type == 'LOGIN'){
+      return {
+        ...state,
+        user : {
+          username : action.payload.username,
+          email : action.payload.email,
+          fullname : action.payload.fullname,
+          rank : action.payload.rank,
+          role : action.payload.role,
+          profilepicture : action.payload.profilepicture
+        }
+      }
+    }
+    else if(action.type == 'LOGOUT'){
+      localStorage.removeItem("dragonforce_token")
+      return INITIAL_STATE
+    }
+    else{
+      return state;
+    }
+  }
+  const store = createStore(Reducer);
+
+// render main component
+ReactDOM.render( 
+  <ChakraProvider>
+      <BrowserRouter>
+          <Provider store = {store}>
+              <App/>
+          </Provider>
+      </BrowserRouter>
+    </ChakraProvider>
+    ,document.getElementById("root")
+)
