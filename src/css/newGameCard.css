@@ -1,0 +1,52 @@
+.newGameCardContainer{
+    max-width: 400px;
+    height:90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size:28px;
+}
+.newGameCard{
+    width:400px;
+    height:85%;
+    overflow: hidden;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px 2px gray;
+    transition: 250ms all ease;
+    
+}
+.newGameCard:hover{
+    transform: scale(1.05);
+}
+.newGameCard:active{
+    transform: scale(1.03);
+}
+.newGameImage{
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.newGameImagePrice{
+    height:35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: black;
+    color:white;
+    font-size:22px;
+    padding:15px;
+    align-self: flex-end;
+    border-radius: 15px 0px 0px 0px;
+}
+.newGameName{
+    margin-bottom: 25px;
+}

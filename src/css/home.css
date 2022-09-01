@@ -1,0 +1,95 @@
+.homeContainer{
+    padding:0;
+    margin:0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position:static;
+}
+.homeBanner{
+    width: 100%;
+    height:95vh;
+    z-index: 3;
+    position: relative;
+    box-shadow: 2px 2px 8px 2px black;
+}
+.homeBannerSlide{
+    height:100%;
+    width: 100%;
+    box-shadow: 2px 2px 4px 2px inset black;
+    cursor:pointer;
+}
+.homeBannerButton{
+    position: absolute;
+    height:70px;
+    top:42vh;
+    background-color: black;
+    color:white;
+    font-size: 30px;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 150ms all ease;
+}
+.homeBannerButton:hover{
+    transform: scale(1.10);
+}
+.homeBannerButton:active{
+    transform: scale(1);
+}
+.homeBannerButtonLeft{
+    left:0;
+    border-radius: 0px 15px 15px 0px;
+}
+.homeBannerButtonRight{
+    border-radius: 15px 0px 0px 15px;
+    right:0;
+}
+.homeBannerGameDescription{
+    position: absolute;
+    max-width: 1000px;
+    bottom:60px;
+    right:0vh;
+    padding:25px;
+    padding-right:75px;
+    background-color: rgba(0, 0, 0, 0.705);
+    box-shadow: 0px 0px 4px 0px black;
+    border-radius: 25px 0px 0px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    transition: 250ms all ease;
+}
+.homeBannerGameDescription:hover{
+    transform: scale(1.01);
+}
+.homeBannerGameTitle{
+    color:white;
+    font-size:52px;
+}
+.homeBannerGamePrice{
+    color:white;
+    font-size:32px;
+}
+.homeNewGameSection{
+    width:100%;
+    height:100%;
+    padding:25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.homeNewGameTitle{
+    margin-top: 25px;
+    font-size:64px;
+}
+.homeNewGameGroup{
+    width: 100%;
+    height:800px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

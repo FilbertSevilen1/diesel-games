@@ -12,32 +12,53 @@ import { Axios } from 'axios'
 
 const INITIAL_STATE = {
     user : {
+      id : "",
       username : "",
       email : "",
-      fullname : "",
-      rank : "",
       role : "",
-      profilepicture: ""
+      balance : "",
+      profilepicture: "",
+
     },
+    gameList : [],
     loading : false
   }
+
   function Reducer(state = INITIAL_STATE, action){
-    
     if(action.type == 'LOGIN'){
       return {
         ...state,
         user : {
-          username : action.payload.username,
-          email : action.payload.email,
-          fullname : action.payload.fullname,
-          rank : action.payload.rank,
-          role : action.payload.role,
-          profilepicture : action.payload.profilepicture
+          id : action.payload.user_id,
+          username : action.payload.user_username,
+          email : action.payload.user_email,
+          role : action.payload.user_role,
+          balance : action.payload.user_balance,
+          profilepicture : action.payload.user_profilepicture
         }
       }
     }
+    else if(action.type == 'ADD_WALLET'){
+      return{
+        ...state,
+        user : {
+          id : state.user.id,
+          username : state.user.username,
+          email : state.user.email,
+          role : state.user.role,
+          balance : action.payload.newBalance,
+          profilepicture : state.user.profilepicture
+        }
+      }
+    }
+    else if(action.type == 'GAME_SEARCH'){
+      return{
+        ...state,
+        gameList : action.payload.gameList
+      }
+    }
     else if(action.type == 'LOGOUT'){
-      localStorage.removeItem("dragonforce_token")
+      localStorage.removeItem("dieselgames_token")
       return INITIAL_STATE
     }
     else{

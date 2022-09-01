@@ -1,0 +1,167 @@
+.TopUpContainer{
+    position: fixed;
+    width: 100vw;
+    height:100vh;
+    overflow: hidden;
+    top:0;
+    background:url("../img/games3.png");
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    padding:60px;
+    padding-top:100px;
+}
+.TopUpContainerMain{
+    width : 90vw;
+    height: 100vh;
+    padding:50px;
+    border-radius: 25px;
+    /* box-shadow: 2px 2px 4px 2px black; */
+    display: flex;
+}
+.topUpContainerLeft{
+    width: 70%;
+    height:90vh;
+    display: flex;
+    flex-direction: column;
+}
+.TopUpContainerRight{
+    width : 35vw;
+    height: 75vh;
+    padding:50px;
+    background-color: black;
+    border-radius: 25px;
+    box-shadow: 2px 2px 4px 2px black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color:white
+}
+.TopUpRuleTitle{
+    font-size:40px;
+}
+.TopUpRuleList{
+    font-size:24px;
+    margin-top:30px;
+    align-self: flex-start;
+    text-align: justify;
+}
+.TopUpRuleImageGroup{
+    width: 100%;
+    height: 85px;
+    margin-top:15px;
+    padding:5px;
+    display: flex;
+}
+.TopUpRuleImage{
+    width: 85px;
+    height:100%;
+    margin-right:5px;
+    background-color: white;
+}
+.TopUpContentGroup{
+    width: 100%;
+    height:40%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.TopUpContentBox{
+    width: 85%;
+    height:100%;
+    background-color: white;
+    box-shadow: 2px 2px 4px 2px black;
+    border-radius: 20px;
+    padding:20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background:url("../img/games3.png");
+    font-size:36px;
+    color:white;
+    transition: 150ms all ease;
+}
+.TopUpContentBox:hover{
+    transform: scale(1.05);
+}
+.TopUpContentBox:active{
+    transform: scale(1.01);
+}
+.TopUpContentBoxPrice{
+    justify-self:flex-start;
+}
+.topUpConfirmationContainer{
+    width: 110vw;
+    height: 100vh;
+    position:fixed;
+    top:-30px;
+    left:-10%;
+    z-index: 6;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+.topUpConfirmationForm{
+    width: 60%;
+    height:60%;
+    background-color: white;
+    margin-left: 18%;
+    margin-top: 2%;
+}
+.topUpConfirmationFormHeader{
+    width: 100%;
+    height: 55px;
+    background-color: orangered;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topUpConfirmationFormHeaderTitle{
+    margin-left: 15px;
+    color:white;
+    font-size:28px;
+}
+.topUpConfirmationFormHeaderClose{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(201, 0, 0);
+    color:white;
+    font-size:30px;
+    cursor: pointer;
+    transition: 150ms all ease;
+}
+.topUpConfirmationFormHeaderClose:hover{
+    background-color: rgb(236, 0, 0);
+}
+.topUpConfirmationFormHeaderClose:active{
+    background-color: rgb(150, 0, 0);
+    transform: scale(0.95);
+}
+.topUpConfirmationBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:80px;
+}
+.topUpConfirmationBodyText{
+    display: flex;
+    font-size: 36px;
+}
+.topUpConfirmationButtonGroup{
+    display: flex;
+    margin-top: 40px;
+}
+.topUpButton{
+    width: 175px;
+    height:70px;
+    font-size: 32px;
+    margin:20px;
+    color:white;
+    border-radius: 10px;
+}

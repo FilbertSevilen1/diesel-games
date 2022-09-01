@@ -1,23 +1,44 @@
 import logo from './logo.svg';
+import AOS from 'aos'
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/users/Home';
+import NotFound from './pages/NotFound';
+import './css/index.css'
+import NavigationBar from './pages/components/NavigationBar';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import Login from './pages/users/Login';
+import Axios from 'axios';
+import Register from './pages/users/Register';
+import TopUp from './pages/users/TopUp';
+import Games from './pages/users/Games';
 
+const API_URL = process.env.REACT_APP_API_URL
 function App() {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    if(localStorage.getItem("dieselgames_token")){
+      Axios.get(API_URL + `/user/${localStorage.getItem("dieselgames_token")}`)
+      .then((respond)=>{
+        dispatch({type:"LOGIN", payload: respond.data})
+      })
+      .catch((error)=>{
+        console.log(error.response.data)
+      })
+    }
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavigationBar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/topup' element={<TopUp/>}/>
+        <Route path='/Games' element={<Games/>}></Route>
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
     </div>
   );
 }
