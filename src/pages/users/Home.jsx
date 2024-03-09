@@ -10,7 +10,7 @@ function Home(){
     const [bannerState, setBannerState] = useState(0)
     const [bannerAnimation, setBannerAnimation] = useState(false)
     const [featuredGameList, setFeaturedGameList] = useState("")
-    const [newGamesList, setNewGamesList] = useState();
+    const [newGamesList, setNewGamesList] = useState("");
     
     useEffect(() => {
         Axios.get(API_URL + "/games?_limit=3")
