@@ -53,14 +53,15 @@ function Home(){
         prevBanner();
     }
     const generateGameGroup = () =>{
-        if(newGamesList){
-            return newGamesList.map((game, index)=>{
-                return <NewGamesCard
-                    key = {game.id}
-                    game = {game}
-                />
-            })
-        }
+        console.log(newGamesList)
+        // if(newGamesList){
+        //     return newGamesList.map((game, index)=>{
+        //         return <NewGamesCard
+        //             key = {game.id}
+        //             game = {game}
+        //         />
+        //     })
+        // }
     }
     return (
         <div className='homeContainer'>
